@@ -3,12 +3,9 @@ base = 3
 def digits(n):
   # return list of digits of number
   a = []
-  if n < 10:
-    a = [n]
-  else:
-    while n:
-      n, remainder = divmod(n, 10)
-      a.append(remainder)
+  while n:
+    n, remainder = divmod(n, 10)
+    a.append(remainder)
   return a
 
 for i in range (1, 1001):
@@ -17,4 +14,4 @@ for i in range (1, 1001):
     s = s + d ** base
 
   if i == s:
-    print('Narcissistic: ', i,)
+    print('Narcissistic:', i,)
