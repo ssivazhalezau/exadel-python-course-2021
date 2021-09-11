@@ -1,5 +1,3 @@
-base = 3
-
 def digits(n):
   # return list of digits of number
   a = []
@@ -10,8 +8,9 @@ def digits(n):
 
 for i in range (1, 1001):
   s = 0
-  for d in digits(i):
-    s = s + d ** base
+  l = digits(i)
+  for d in l:
+    s = s + d ** len(l)
 
   if i == s:
-    print('Narcissistic:', i,)
+    print("Narcissistic: {0:5}".format(s))
