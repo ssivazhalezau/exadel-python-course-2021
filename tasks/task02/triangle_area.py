@@ -32,7 +32,7 @@ def submenu(s):
 def triangle_by_base():
     """
     We calculate triangle area by base and height.
-    Please enter base and height as integers separated by space or comma
+    Please enter base and height as integers separated by space
     """
 
     while True:
@@ -52,7 +52,7 @@ def triangle_by_base():
 def triangle_by_twos():
     """
     We calculate triangle area by 2 sides and angle between them.
-    Please enter two sizes value followed by angle as integers separated by space or comma
+    Please enter two sizes value followed by angle as integers separated by space
     """
 
     while True:
