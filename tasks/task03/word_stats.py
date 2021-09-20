@@ -16,11 +16,8 @@ for i, sentence in enumerate(texts):
             words.append({'word':w, 'count':1, 'index':i})
 
         else:
-            # print(dict_index)
             words[dict_index]['count'] = words[dict_index]['count'] + 1
-            # print(words[dict_index]['count'])
 
 print('word    count   first line')
 for i, word in enumerate(words):
-    # print(f"{words[i]['word']<10}")
     print(words[i]['word'].ljust(7), str(words[i]['count']).ljust(7), words[i]['index'])
