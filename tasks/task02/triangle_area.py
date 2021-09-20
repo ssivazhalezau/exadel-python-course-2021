@@ -16,9 +16,8 @@ def mainmenu():
         3. Exit
         Enter menu item number: '''))
         if m in ['1', '2', '3']:
-            break
+            return m
         print('\nYou might try to use 1/2/3 numbers')
-    return m
 
 def submenu(s):
     if   s == '1':
