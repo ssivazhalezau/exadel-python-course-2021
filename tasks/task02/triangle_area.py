@@ -8,7 +8,7 @@ class clr:
 
 def mainmenu():
     m  = ''
-    while m not in ['1', '2', '3']:
+    while True:
         m = input(dedent(f'''
         Menu:
         1. Calculate triangle area by base {clr.ORANGE}and{clr.ENDC} height
