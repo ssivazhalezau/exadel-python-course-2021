@@ -11,7 +11,7 @@ words ={}
 for i, sentence in enumerate(texts):
     for w in re.sub(r"[^\w]", " ", str.lower(sentence)).split():
         if w in words:
-            words[w] = {'index': words[w]['index'], 'count': words[w]['count'] + 1}
+            words[w]['count'] = words[w]['count'] + 1
         else:
             words[w] = {'index': i, 'count': 1}
 
