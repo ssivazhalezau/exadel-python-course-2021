@@ -6,18 +6,15 @@ texts = [
    "Hello, how are you?"
 ]
 
-words =[]
+words ={}
 
 for i, sentence in enumerate(texts):
-    index = i
-    for w in re.sub("[^\w]", " ", str.lower(sentence)).split():
-        dict_index = next((i for i, item in enumerate(words) if item['word'] == w), None)
-        if dict_index is None:
-            words.append({'word':w, 'count':1, 'index':i})
-
+    for w in re.sub(r"[^\w]", " ", str.lower(sentence)).split():
+        if w in words:
+            words[w] = {'index': words[w]['index'], 'count': words[w]['count'] + 1}
         else:
-            words[dict_index]['count'] = words[dict_index]['count'] + 1
+            words[w] = {'index': i, 'count': 1}
 
 print('word    count   first line')
-for i, word in enumerate(words):
-    print(words[i]['word'].ljust(7), str(words[i]['count']).ljust(7), words[i]['index'])
+for n, v in words.items():
+    print(n.ljust(7), str(words[n]['count']).ljust(7), words[n]['index'])
