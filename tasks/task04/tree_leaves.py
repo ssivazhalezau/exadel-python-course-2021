@@ -9,18 +9,16 @@ tree = {
    "node2": [7, 8, 9]
 }
 
-leaves = []
-
 def collect_leaves(t):
-    global leaves
+    leaves = []
 
     assert not isinstance(t, dict) or not isinstance(t, list), 'We accept only tree of dicts'
 
     if isinstance(t, dict):
-        for key, value in t.items():
-            print ('k:', key, 'v:', value)
+        for value in t.values():
             if isinstance(value, dict):
-                collect_leaves(value)
+                for v in collect_leaves(value):
+                    leaves.append(v)
             else:
                 leaves = leaves + value
     else:
@@ -29,4 +27,5 @@ def collect_leaves(t):
     return leaves
 
 print(collect_leaves(tree))
-# print(collect_leaves([1, 2, 3]))
+print(collect_leaves(tree))
+print(collect_leaves([1, 2, 3]))
