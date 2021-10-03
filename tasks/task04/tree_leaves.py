@@ -21,6 +21,6 @@ def collect_leaves(t):
 
     return leaves
 
-assert collect_leaves(tree) == [1, 2, 3, 31, 5, 31, 7, 8, 9] or collect_leaves([1, 2, 3]) == [1, 2, 3], 'Wrong function result'
+assert collect_leaves(tree) == [1, 2, 3, 31, 5, 31, 7, 8, 9] and collect_leaves([1, 2, 3]) == [1, 2, 3], 'Wrong function result'
 
 print(collect_leaves(tree))
