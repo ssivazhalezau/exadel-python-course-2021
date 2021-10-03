@@ -12,8 +12,6 @@ tree = {
 def collect_leaves(t):
     leaves = []
 
-    assert not isinstance(t, dict) or not isinstance(t, list), 'We accept only tree of dicts'
-
     if isinstance(t, dict):
         for value in t.values():
             if isinstance(value, dict):
@@ -26,6 +24,6 @@ def collect_leaves(t):
 
     return leaves
 
+assert collect_leaves(tree) == [1, 2, 3, 31, 5, 31, 7, 8, 9] or collect_leaves([1, 2, 3]) == [1, 2, 3], 'Wrong function result'
+
 print(collect_leaves(tree))
-print(collect_leaves(tree))
-print(collect_leaves([1, 2, 3]))
