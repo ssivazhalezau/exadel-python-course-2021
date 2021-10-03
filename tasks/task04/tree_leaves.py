@@ -14,11 +14,8 @@ def collect_leaves(t):
 
     if isinstance(t, dict):
         for value in t.values():
-            if isinstance(value, dict):
-                for v in collect_leaves(value):
-                    leaves.append(v)
-            else:
-                leaves = leaves + value
+            for v in collect_leaves(value):
+                leaves.append(v)
     else:
         leaves = leaves + t
 
