@@ -1,15 +1,14 @@
 import json
+from typing import Dict
 
-def create_user(name, surname, age=42, **kwargs):
+def create_user(name: str, surname: str, age: int = 42, **kwargs) -> Dict:
     result = {  'name':     '',
                 'surname':  '',
                 'age':      65,
                 'extra':    {}
                 }
 
-    assert type(name) == str and type(surname) == str and name and surname, 'Only human names allowed'
-    assert type(age) == int, 'Please use positive integers for age'
-    assert age>0, 'Hello, Marty McFly'
+
 
     result['name'] = name
     result['surname'] = surname
@@ -17,7 +16,7 @@ def create_user(name, surname, age=42, **kwargs):
     for n, v in kwargs.items():
         result['extra'][n] = v
 
-    return json.dumps(result, sort_keys=False, indent=4)
+    return result
 
 # print(create_user("John", "Doe"))
 # print(create_user("Bill", "Gates", age=65))
